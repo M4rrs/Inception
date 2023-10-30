@@ -1,0 +1,15 @@
+version: '3.1'
+volumes:
+services:
+  db:
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+    restart: on-failure
+  nginx:
+    env-file:
+      - .env
+    ports:
+      - 9000:9000
+    restart: on-failure
