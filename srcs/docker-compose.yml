@@ -1,15 +1,23 @@
 version: '3.1'
-volumes:
+# volumes:
 services:
-  db:
+  # db:
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - 3306:3306
+  #   restart: on-failure
+  nginx:
+    container_name: nginx
+    build: requirements/Nginx
+    networks:
+      - Inception
     env_file:
       - .env
     ports:
-      - 3306:3306
-    restart: on-failure
-  nginx:
-    env-file:
-      - .env
-    ports:
+      - 443:443
       - 9000:9000
     restart: on-failure
+
+networks:
+  Inception:
