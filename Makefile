@@ -1,16 +1,18 @@
+SRCS = ./srcs/docker-compose.yml
+
 #-------------------------------------------------------------------#
 build:
-	docker-compose -f ./srcs/docker-compose.yml up --build
+	docker-compose -f ${SRCS} up --build
 
 end:
-	docker-compose -f ./srcs/docker-compose.yml down
+	docker-compose -f ${SRCS} down
 
 #-------------------------------------------------------------------#
 start:
-	docker-compose -f ./srcs/docker-compose.yml start
+	docker-compose -f ${SRCS} start
 
 stop:
-	docker-compose -f ./srcs/docker-compose.yml stop
+	docker-compose -f ${SRCS} stop
 
 #-------------------------------------------------------------------#
 fclean:
@@ -20,4 +22,4 @@ re: stop fclean run
 
 # Lists the services in docker-compose.yml
 ps:
-	docker compose -f ./srcs/docker-compose.yml ps
+	docker compose -f ${SRCS} ps
