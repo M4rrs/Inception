@@ -10,4 +10,6 @@ COPY /conf/nginx.conf /etc/nginx/
 
 COPY /tools/script.sh /tools/script.sh
 
+EXPOSE 443
+
 CMD ["tools/script.sh"]
