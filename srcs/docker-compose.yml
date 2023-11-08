@@ -1,18 +1,23 @@
 version: '3.1'
-# volumes:
-#   mariadb:
-#     driver: local
+volumes:
+  mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/m4rrs/data/mariadb
+      o: bind
+
 services:
-  # db:
-  #   container_name: mariadb
-  #   build: requirements/MariaDB
-  #   networks:
-  #     - Inception
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - 3306:3306
-  #   restart: on-failure
+  db:
+    container_name: mariadb
+    build: requirements/MariaDB
+    networks:
+      - Inception
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+    restart: on-failure
   nginx:
     container_name: nginx
     build: requirements/Nginx
