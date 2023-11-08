@@ -9,6 +9,7 @@ COPY /conf/default /etc/nginx/sites-available/default
 COPY /conf/nginx.conf /etc/nginx/
 
 COPY /tools/script.sh /tools/script.sh
+RUN chmod +x /tools/script.sh
 
 EXPOSE 443
 
