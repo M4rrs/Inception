@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "USE mysql;
 FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
