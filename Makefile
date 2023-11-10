@@ -31,4 +31,4 @@ re: end fclean run
 
 # Lists the services in docker compose.yml
 ps:
-	${BUILD} ${SRCS} ps
+	docker ps -a
