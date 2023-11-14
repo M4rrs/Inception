@@ -6,6 +6,12 @@ volumes:
       type: none
       device: /Users/m4rrs/data/mariadb
       o: bind
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/m4rrs/data/wordpress
+      o: bind
 
 services:
   db:
@@ -28,6 +34,17 @@ services:
     ports:
       - 443:443
     restart: on-failure
-
+  wordpress:
+    container_name: wordpress
+    depends_on:
+      - db
+    build: requirements/WordPress
+    networks:
+      - Inception
+    env_file:
+      - .env
+    ports:
+      - 9000:9000
+    restart: on-failure
 networks:
   Inception:

@@ -4,6 +4,7 @@ BUILD = docker-compose -f
 #-------------------------------------------------------------------#
 b:
 	mkdir -p $(HOME)/data/mariadb
+	mkdir -p $(HOME)/data/wordpress
 	${BUILD} ${SRCS} build
 
 r:
