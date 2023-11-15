@@ -12,4 +12,10 @@ RUN apt-get update && apt-get install -y \
 		php-soap \
 		php-xml \
 		php-xmlrpc \
-		php-zip \
+		php-zip
+
+COPY /tools/script.sh /tools/script.sh
+
+EXPOSE 9000
+
+CMD ["/tools/script.sh"]
