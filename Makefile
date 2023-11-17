@@ -36,3 +36,14 @@ re: end fclean run
 # Lists the services in docker-compose.yml
 ps:
 	docker ps -a
+
+#-------------------------------------------------------------------#
+
+db:
+	docker exec -it mariadb bash
+
+ng:
+	docker exec -it nginx bash
+
+wp:
+	docker exec -it wordpress bash

@@ -15,7 +15,10 @@ RUN apt-get update && apt-get install -y \
 		php-zip
 
 COPY /tools/script.sh /tools/script.sh
+RUN chmod +x /tools/script.sh
 
 EXPOSE 9000
+
+WORKDIR /var/www/html
 
 CMD ["/tools/script.sh"]
