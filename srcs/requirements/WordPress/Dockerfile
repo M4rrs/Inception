@@ -1,6 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && apt-get install -y \
+		wget \
 		php \
 		php-fpm \
 		php-mysql
@@ -10,6 +11,4 @@ RUN chmod +x /tools/script.sh
 
 EXPOSE 9000
 
-WORKDIR /var/www/html
-
-CMD ["/tools/script.sh"]
+CMD ["tools/script.sh"]
