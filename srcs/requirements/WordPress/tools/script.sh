@@ -8,6 +8,9 @@ else
 	chmod +x wp-cli.phar
 	mv wp-cli.phar /usr/local/bin/wp
 	wp core download --allow-root	
+
+	cp wp-config-sample.php wp-config.php
+	
 fi
 
 tail -f /dev/null
