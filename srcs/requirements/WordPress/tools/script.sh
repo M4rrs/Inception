@@ -14,6 +14,12 @@ else
 	sed -i 's/username_here/$MYSQL_USER/1' wp-config.php
 	sed -i 's/password_here/$MYSQL_PASSWORD/1' wp-config.php
 	sed -i 's/localhost/$WP_LOCALHOST/1' wp-config.php
+
+	wp core install --url=$DOMAIN_NAME --title=$WP_TITLE --admin_name=$WP_ADMIN --admin_password=$MYSQL_ROOT_PASSWORD --admin_email=$WP_EMAIL --allow-root
 fi
 
-tail -f /dev/null
+sed -i 's|/run/php/php7.3-fpm-sock|9000|' /etc/php/7.3/fpm/pool.d/www.conf
+mkdir -p /run/php
+
+/usr/sbin/php-fpm7.3 -F
+# tail -f /dev/null
