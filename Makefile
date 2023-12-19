@@ -27,9 +27,11 @@ stop:
 #-------------------------------------------------------------------#
 clean:
 	docker system prune -f
+	# rm -rf $(HOME)/data/*
 	
 fclean:
 	docker system prune --all -f
+	# rm -rf $(HOME)/data/*
 
 re: end fclean run
 

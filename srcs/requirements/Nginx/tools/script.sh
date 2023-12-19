@@ -7,3 +7,5 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ngi
 # Considered as best practice for Docker containers, one container = one process.
 # By running nginx in the foreground, the Docker container remains alive for as long as the webserver is running.
 nginx -g "daemon off;"
+
+# tail -f /dev/null

@@ -28,6 +28,8 @@ services:
     restart: on-failure
   nginx:
     container_name: nginx
+    depends_on:
+      - wordpress
     build: requirements/Nginx
     volumes:
       - wordpress:/var/www/html

@@ -12,4 +12,4 @@ RUN chmod +x /tools/script.sh
 
 EXPOSE 9000
 
-CMD ["tools/script.sh"]
+CMD ["/tools/script.sh"]
