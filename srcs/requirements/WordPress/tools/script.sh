@@ -22,6 +22,6 @@ fi
 sed -i 's|/run/php/php7.3-fpm.sock|9000|' /etc/php/7.3/fpm/pool.d/www.conf
 mkdir -p /run/php
 
-/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm7.3 -F -R
 
 # tail -f /dev/null
