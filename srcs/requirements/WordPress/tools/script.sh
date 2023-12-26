@@ -10,10 +10,10 @@ else
 	wp core download --allow-root	
 
 	cp wp-config-sample.php wp-config.php
-	sed -i 's/database_name_here/$MYSQL_DATABASE/1' wp-config.php
-	sed -i 's/username_here/$MYSQL_USER/1' wp-config.php
-	sed -i 's/password_here/$MYSQL_PASSWORD/1' wp-config.php
-	sed -i 's/localhost/$WP_LOCALHOST/1' wp-config.php
+	sed -i "s/database_name_here/$MYSQL_DATABASE/1" wp-config.php
+	sed -i "s/username_here/$MYSQL_USER/1" wp-config.php
+	sed -i "s/password_here/$MYSQL_PASSWORD/1" wp-config.php
+	sed -i "s/localhost/$WP_LOCALHOST/1" wp-config.php
 
 	wp core install --url=$DOMAIN_NAME --title=$WP_TITLE --admin_name=$WP_ADMIN --admin_password=$MYSQL_ROOT_PASSWORD --admin_email=$WP_EMAIL --allow-root
 	wp user create $WP_USER	$WP_USER_EMAIL --role=author --user_pass=$WP_PASSWORD --allow-root
