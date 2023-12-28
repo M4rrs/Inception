@@ -4,6 +4,8 @@ if [ -f ./wp-config.php ]; then
 	echo "WordPress already installed"
 else
 	cd /var/www/html
+
+	rm -rf *
 	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 	chmod +x wp-cli.phar
 	mv wp-cli.phar /usr/local/bin/wp
