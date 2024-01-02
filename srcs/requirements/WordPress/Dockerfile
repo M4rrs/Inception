@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
 		vim \
 		php \
 		php-fpm \
-		php-mysql
+		php-mysql \
+		mariadb-server
 
 COPY /tools/script.sh /tools/script.sh
 RUN chmod +x /tools/script.sh

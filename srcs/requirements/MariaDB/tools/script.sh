@@ -15,6 +15,6 @@ mysql_install_db --user=mysql
 mysqld --user=mysql --bootstrap < /tmp/script.sql
 mysqld_safe --user=mysql
 
-sed -i "s/127.0.0.1/mariadb/" /etc/mysql/mariadb.conf.d/50-server.cnf
+# sed -i "s/127.0.0.1/0.0.0.0/1" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # tail -f /dev/null

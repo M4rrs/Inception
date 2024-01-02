@@ -15,7 +15,7 @@ RUN chown mysql:root /run/mysqld
 RUN mkdir -p /mariadb_dir
 
 # bind address 0.0.0.0
-# COPY /conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY /conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 EXPOSE 3306
 
